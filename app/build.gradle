@@ -1,0 +1,79 @@
+import com.pony.compose.buildsrc.Libs
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.pony.compose"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Libs.AndroidX.Compose.compilerVersion
+    }
+}
+
+dependencies {
+    implementation Libs.AndroidX.appcompat
+    implementation Libs.AndroidX.coreKtx
+    implementation Libs.Google.material
+    implementation Libs.AndroidX.Compose.ui
+    implementation Libs.AndroidX.Compose.material
+    implementation Libs.AndroidX.Compose.material3
+    implementation Libs.AndroidX.Compose.tooling
+    implementation Libs.AndroidX.Compose.livedata
+    implementation Libs.AndroidX.Activity.activityCompose
+
+    implementation Libs.Hilt.hiltCompose
+    implementation Libs.Accompanist.pager
+//    implementation Libs.Accompanist.webView
+//    implementation Libs.Accompanist.permission
+    implementation Libs.Accompanist.flowlayout
+    implementation Libs.Accompanist.systemUiController
+    implementation Libs.Accompanist.navigation
+    implementation Libs.Accompanist.swipeRefresh
+    //coli
+    implementation Libs.Coli.coliCompose
+    //lifecycle
+    implementation Libs.AndroidX.Lifecycle.liveData
+    implementation Libs.AndroidX.Lifecycle.viewModel
+    implementation Libs.Libraries.timber
+    //paging
+    implementation Libs.AndroidX.Paging.paging_runtime
+    implementation Libs.AndroidX.Paging.paging_common
+    implementation Libs.AndroidX.Paging.paging_compose
+
+    //retrofit + okhttp
+    implementation Libs.OkHttp.retrofit
+    implementation Libs.OkHttp.converter_gson
+    implementation Libs.OkHttp.okHttp
+    implementation Libs.OkHttp.okhttp_interceptor
+}

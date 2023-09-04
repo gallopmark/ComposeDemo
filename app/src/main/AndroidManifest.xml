@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.pony.compose">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".CurrentApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="LockedOrientationActivity"
+        tools:targetApi="m">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.dialog.ComposeDialogActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.BackdropScaffoldActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.pager.ComposeViewPagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.text.CustomTextActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.text.CustomTextFieldActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.pager.ComposePagerMain"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.pager.HorizontalPagerBasicSample"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.web.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.flow.FlowLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.drawer.DrawerAppActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.state.StateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.state.livedata.LiveDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.tab.TabLayoutActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.frame.FrameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.theme.DarkModeActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
